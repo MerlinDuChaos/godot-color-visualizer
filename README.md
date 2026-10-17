@@ -4,7 +4,7 @@
 
 # Godot Color Visualizer for Visual Studio Code
 
-![GitHub package.json version](https://img.shields.io/github/package-json/v/MerlinDuChaos/godot-color-visualizer) [![Visual Studio Marketplace Version](https://img.shields.io/badge/marketplace-v0.1.0-blue.svg)](https://marketplace.visualstudio.com) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+![GitHub package.json version](https://img.shields.io/github/package-json/v/MerlinDuChaos/godot-color-visualizer) [![Visual Studio Marketplace Version](https://vsmarketplacebadges.dev/version/MerlinDuChaos.godot-color-visualizer.svg)](https://marketplace.visualstudio.com/items?itemName=MerlinDuChaos.godot-color-visualizer) [![Open VSX Version](https://img.shields.io/open-vsx/v/merlinduchaos/godot-color-visualizer)](https://open-vsx.org/extension/merlinduchaos/godot-color-visualizer) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 **Godot Color Visualizer** brings native color swatches, decorators, and color picking to your Godot game development workflow in Visual Studio Code.
 
