@@ -1,0 +1,5 @@
+{
+  "testExplorer.codeLens": true,
+  "nodejs-testing.include": ["out"],
+  "godotColorVisualizer.displayStyle": "underline"
+}

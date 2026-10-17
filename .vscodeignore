@@ -1,0 +1,15 @@
+.vscode/**
+.vscode-test/**
+src/**
+sample/**
+out/test/**
+out/**/*.map
+tsconfig.json
+package-lock.json
+*.log
+.gitignore
+.git/**
+icon.af*
+images/**
+extension/**
+*.vsix

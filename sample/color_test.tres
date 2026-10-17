@@ -1,0 +1,17 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://godotcolorvisualizertest"]
+
+[resource]
+default_font_size = 16
+; Standard RGBA float colors
+BaseColor = Color(0.2, 1, 0.5, 1)
+HighlightColor = Color(1, 0.75, 0.3, 0.8)
+
+; 8-bit integer color8 format
+AlertColor = Color8(255, 68, 68, 255)
+
+; Hex color formats
+PrimaryHex = Color("#FF4444")
+SecondaryHex = Color("#00FFCCFF")
+
+; PackedColorArray representing multiple RGBA colors consecutively
+CustomPalette = PackedColorArray(1, 0, 0, 1, 0, 1, 0, 1, 0, 0, 1, 1)

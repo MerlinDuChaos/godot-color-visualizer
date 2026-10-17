@@ -1,0 +1,116 @@
+{
+  "name": "godot-color-visualizer",
+  "displayName": "Godot Color Visualizer",
+  "description": "Visualize and edit Godot colors (C#, GDScript, GDShader, TSCN, TRES, BBCode) while preserving their original format.",
+  "version": "0.1.0",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "publisher": "merlinduchaos",
+  "icon": "icon.png",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MerlinDuChaos/godot-color-visualizer"
+  },
+  "keywords": [
+    "godot",
+    "color",
+    "visualizer",
+    "color-picker",
+    "gdscript",
+    "csharp",
+    "gdshader",
+    "bbcode",
+    "game-development"
+  ],
+  "categories": ["Programming Languages", "Visualization"],
+  "activationEvents": [
+    "onLanguage:csharp",
+    "onLanguage:gdscript",
+    "onLanguage:gdshader",
+    "onLanguage:godot-resource",
+    "workspaceContains:**/project.godot"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "godotColorVisualizer.pickColor",
+        "title": "Godot Color: Open Color Picker"
+      }
+    ],
+    "configuration": {
+      "title": "Godot Color Visualizer",
+      "properties": {
+        "godotColorVisualizer.displayStyle": {
+          "type": "string",
+          "enum": ["square", "circle", "underline", "border", "background"],
+          "default": "square",
+          "description": "Visual style used to display colors in the editor."
+        },
+        "godotColorVisualizer.enableCodeFiles": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable color visualization in code files (.cs, .gd, .gdshader)."
+        },
+        "godotColorVisualizer.enableResourceFiles": {
+          "type": "boolean",
+          "default": false,
+          "description": "Enable color visualization in Godot resource and project files (.tscn, .tres, project.godot)."
+        },
+        "godotColorVisualizer.floatPrecision": {
+          "type": "number",
+          "default": 3,
+          "description": "Maximum number of decimal places for float values (e.g., 0.25f)."
+        },
+        "godotColorVisualizer.customPatterns": {
+          "type": "array",
+          "default": [],
+          "description": "Additional regular expressions with named capture groups (?<r>, ?<g>, ?<b>, ?<a> or ?<hex>).",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string",
+                "description": "Display name for this custom pattern."
+              },
+              "extensions": {
+                "type": "array",
+                "items": { "type": "string" },
+                "description": "Target file extensions (e.g., ['.cs', '.gd']). Leave empty for all supported files."
+              },
+              "regex": {
+                "type": "string",
+                "description": "Regular expression with named capture groups: r, g, b, a or hex."
+              },
+              "format": {
+                "type": "string",
+                "enum": ["rgba_float", "rgba_8", "hex"],
+                "default": "rgba_float",
+                "description": "Color value representation used by this pattern."
+              },
+              "useFloatSuffix": {
+                "type": "boolean",
+                "default": false,
+                "description": "Append the 'f' suffix to float numbers (e.g., for C#)."
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "test": "npm run compile && node --test out/test/*.test.js",
+    "package": "vsce package"
+  },
+  "devDependencies": {
+    "@types/node": "^20.x",
+    "@types/vscode": "^1.85.0",
+    "typescript": "^5.3.0"
+  }
+}
